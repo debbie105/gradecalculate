@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>成績計算 ver.2</title>
+  
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>學生成績管理</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.0/xlsx.full.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        th, td {
+            padding: 8px;
+            text-align: center;
+        }
+        input[type="number"] {
+            width: 80px;
+            text-align: center;
+        }
+        .summary {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>學生成績管理</h1>
+
+    <!-- 文件上傳 -->
+    <input type="file" id="fileInput" accept=".xlsx, .xls" />
+    <button onclick="generateExcel()">生成 Excel</button>
+
+    <table id="studentTable">
+        <thead>
+            <tr>
+                <th>學號</th>
+                <th>姓名</th>
+                <th>選擇題成績</th>
+                <th>簡答題成績</th>
+                <th>總成績</th>
+                <th>選擇題調分倍率</th>
+                <th>調分後總成績</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- 學生資料會動態填充到這裡 -->
+        </tbody>
+    </table>
+
+    <div class="summary">
+        <p>選擇題平均：<span id="selectAvg">0</span></p>
+        <p>簡答題平均：<span id="answerAvg">0</span></p>
+        <p>總成績平均：<span id="classAvg">0</span></p>
+        <p>調分後總成績平均：<span id="adjustedAvg">0</span></p>
+        <p>及格學生數：<span id="passedCount">0</span></p>
+        <p>不及格學生數：<span id="failedCount">0</span></p>
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
+<!-- partial -->
+  <script  src="./script.js"></script>
+
+</body>
+</html>
